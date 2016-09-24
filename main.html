@@ -1,0 +1,39 @@
+<!--main.html-->
+<html>
+<head>
+    <title>Chirp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+    <script src="noticiaApp.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body ng-app="noticiaApp">
+
+
+<div id='main' class="container" ng-controller="mainController">
+    <div class="col-md-offset-2 col-md-8">
+        <div class="clearfix">
+
+            <form ng-Submit="transformarJson()">
+                <textarea required class="form-control"  placeholder="Say something" ng-model="noticiaJson"></textarea>
+                <input class="btn submit-btn pull-right" type="submit" value="Chirp!" />
+            </form>
+
+            <div id="post-prueba">
+                <h4>Pruebas</h4>
+                <div class="post" ng-repeat="noticia in noticias[0] | orderBy:'fecha':true" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <p>{{noticia.titulo}}</p>
+                    <p>{{noticia.descripcion}}</p>
+                    <p>{{noticia.fecha}}</p>
+                    <img src={{noticia.img}}>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
