@@ -1,12 +1,13 @@
 /**
  * Created by Wizao on 23-09-2016.
+ * modified by Jota on 25-09-2016.
  */
 var app = angular.module('noticiaApp', []);
 
 app.controller('mainController', function($scope){
 
     $scope.noticias = [] ;
-    $scope.noticiaJson = '';
+    //$scope.noticiaJson = '';
 
     $scope.transformarNoticia = function(){
 
@@ -20,8 +21,7 @@ app.controller('mainController', function($scope){
 
         $scope.noticiaObjeto  = angular.fromJson($scope.noticiaJson);
         $scope.noticias.push($scope.noticiaObjeto);
-        $scope.noticiaJson = '';
-
-
+		//$scope.noticiaJson = '';
     };
+
 });
