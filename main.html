@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <title>Chirp</title>
+    <title>Notcias</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
     <script src="noticiaApp.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -15,13 +15,16 @@
 	</h1>
 	
 	<div id='main' class="container" ng-controller="mainController">
+	
 		<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
 			<div id="json">
 				<h4>JSON</h4>
-				<form ng-Submit="transformarJson()">
+				<textarea id="textarea" required class="form-control" placeholder="Escribe una noticia en formato JSON.." 
+				ng-change="transformarJson()" ng-model="noticiaJson"></textarea>
+				<!--<form ng-Submit="transformarJson()">
 					<textarea id="textarea" required class="form-control"  placeholder="Say something" ng-model="noticiaJson"></textarea>
 					<input class="btn submit-btn pull-right" type="submit" value="Chirp!" />
-				</form>
+				</form>-->
 			</div>
 		</div>
 		
@@ -29,7 +32,7 @@
 			<div class="clearfix">
 				<div id="contenido">
 					<h4>NOTICIAS</h4>
-					<div class="post" ng-repeat="noticia in noticias[0] | orderBy:'fecha':true" ng-class-odd="'odd'" ng-class-even="'even'">
+					<div  ng-repeat="noticia in noticias[0] | orderBy:'fecha':true" ng-class-odd="'odd'" ng-class-even="'even'">
 						<p>{{noticia.titulo}}</p>
 						<p>{{noticia.descripcion}}</p>
 						<p>{{noticia.fecha}}</p>
@@ -38,6 +41,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 	
 </body>
