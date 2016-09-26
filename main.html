@@ -2,7 +2,6 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-<<<<<<< HEAD
 	<title>Notcias</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
 	<script src="noticiaApp.js"></script>
@@ -12,7 +11,7 @@
 <body ng-app="noticiaApp">
 
 <h1 id="logo">
-	<img href="http://www.ucn.cl" src="img/logo.png" title="ir a UCN"></img>
+	<img href="http://www.ucn.cl" src="img/logo.png" title="ir a UCN" >
 </h1>
 
 <div id='main' class="container" ng-controller="mainController">
@@ -38,48 +37,9 @@
 					<p>{{noticia.descripcion}}</p>
 					<p>{{noticia.fecha}}</p>
 					<img src={{noticia.img}}>
-=======
-    <title>Notcias</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
-    <script src="noticiaApp.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheets/style.css">
-</head>
-<body ng-app="noticiaApp">
-	
-	<h1 id="logo">
-		<img href="http://www.ucn.cl" src="img/logo.png" title="ir a UCN"></img>
-	</h1>
-	
-	<div id='main' class="container" ng-controller="mainController">
-	
-		<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
-			<div id="json">
-				<h4>JSON</h4>
-				<textarea id="textarea" required class="form-control" placeholder="Escribe una noticia en formato JSON.." 
-				ng-change="transformarJson()" ng-model="noticiaJson"></textarea>
-				<!--<form ng-Submit="transformarJson()">
-					<textarea id="textarea" required class="form-control"  placeholder="Say something" ng-model="noticiaJson"></textarea>
-					<input class="btn submit-btn pull-right" type="submit" value="Chirp!" />
-				</form>-->
-			</div>
-		</div>
-		
-		<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">	
-			<div class="clearfix">
-				<div id="contenido">
-					<h4>NOTICIAS</h4>
-					<div  ng-repeat="noticia in noticias[0] | orderBy:'fecha':true" ng-class-odd="'odd'" ng-class-even="'even'">
-						<p>{{noticia.titulo}}</p>
-						<p>{{noticia.descripcion}}</p>
-						<p>{{noticia.fecha}}</p>
-						<img src={{noticia.img}}>
-					</div>
->>>>>>> origin/master
 				</div>
 			</div>
 		</div>
-		
 	</div>
 
 </div>
