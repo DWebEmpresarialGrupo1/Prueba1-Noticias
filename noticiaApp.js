@@ -7,28 +7,26 @@ var app = angular.module('noticiaApp', []);
 app.controller('mainController', function($scope){
 
     $scope.noticias = [] ;
-<<<<<<< HEAD
     $scope.i = 0;
-=======
     //$scope.noticiaJson = '';
->>>>>>> origin/master
 
+    $scope.transformarNoticia = function(){
 
+        $scope.newPost.created_at = Date.now();
+        $scope.posts.push($scope.newPost);
+        $scope.newPost = {created_by: '', text: '', created_at: ''};
+
+    };
 
     $scope.transformarJson = function(){
 
         $scope.noticiaObjeto  = angular.fromJson($scope.noticiaJson);
-<<<<<<< HEAD
 
         for( $scope.i in  $scope.noticiaObjeto){
             $scope.noticias.push($scope.noticiaObjeto[$scope.i]);
         };
 
 
-=======
-        $scope.noticias.push($scope.noticiaObjeto);
-		//$scope.noticiaJson = '';
->>>>>>> origin/master
     };
 
 });
