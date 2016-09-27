@@ -6,6 +6,10 @@ var app = angular.module('noticiaApp', []);
 
 app.controller('mainController', function($scope){
 
+<<<<<<< HEAD
+=======
+    $scope.noticias = [] ;
+>>>>>>> origin/master
     $scope.i = 0;
 
 
