@@ -6,13 +6,11 @@ var app = angular.module('noticiaApp', []);
 
 app.controller('mainController', function($scope){
 
-    $scope.noticias = [] ;
     $scope.i = 0;
-
-
     
     $scope.transformarJson = function(){
 
+		$scope.noticias = [] ;
         $scope.noticiaObjeto  = angular.fromJson($scope.noticiaJson);
 
         for( $scope.i in  $scope.noticiaObjeto){
